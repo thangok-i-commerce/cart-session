@@ -6,23 +6,26 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "Cart")
+@Table(name = "cart_product")
 @Getter
 @Setter
 @NoArgsConstructor
-public class Cart implements Serializable {
+public class CartProduct implements Serializable {
 
     @Id
     @GeneratedValue
     private UUID id;
 
-    @Column(name = "user_id", nullable = false)
-    private UUID userId;
+    @Column(name = "cart_id", nullable = false)
+    private Cart cart;
 
-    @OneToMany(mappedBy = "cart")
-    private List<CartProduct> productList;
+    @Column(name = "product_id", nullable = false)
+    private Long productId;
+
+    @Column(name = "count")
+    private Long count;
+
 }

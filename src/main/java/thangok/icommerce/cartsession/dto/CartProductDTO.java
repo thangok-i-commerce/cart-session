@@ -6,19 +6,18 @@ import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
-import java.util.List;
 import java.util.UUID;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @ToString
-public class CartDTO implements Serializable {
+public class CartProductDTO implements Serializable {
 
     private UUID id;
 
-    private UUID userId;
+    private Long productId;
 
-    private List<CartProductDTO> productList;
+    private Long count;
 
 }
